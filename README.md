@@ -1,42 +1,33 @@
 ---
 title: Directus
-description: Directus 9. An Instant App & API for your SQL Database.
-buttonSource: https://railway.app/new/template/_dszdt?referralCode=codedgeekery
+description: A one-click-install Directus instance using PostgreSQL. Always install lastest version know of Directus.
 tags:
+  - javascript
   - directus
   - cms
-  - javascript
-  - typescript
-  - postgresql
-  - s3
+  - postgreSQL
 ---
 
-# Directus On Railway
+# Directus railway template
 
-This example deploys a self-hosted version of [Directus](https://directus.io). 
+This example runs a [Directus](https://directus.io/) instance with minimal config using PostgreSQL.
 
-Internally it uses a PostgreSQL database to store the data and S3 to store files.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/_dszdt?referralCode=codedgeekery)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/2fy758?referralCode=4ArgSI)
 
 ## ✨ Features
 
 - Directus
-- Postgres
-- S3
-- Slugs (via inclusion of [https://github.com/dimitrov-adrian/directus-extension-wpslug-interface](https://github.com/dimitrov-adrian/directus-extension-wpslug-interface))
+- PostgreSQL
+- Javascript
 
 ## 💁‍♀️ How to use
 
-- Click the Railway button 👆
-- Add the environment variables
-  - If you do not add the S3 related environment variables, your images/files will not be persisted between deploys.
+- Add the .env vars on template (you can add more vars when the app is deployed).
+- Let railway deploy your service, grab the generated domain from the service settings.
+- Login in the panel using the defined ADMIN_EMAIL and ADMIN_PASSWORD used in .env vars
 
 ## 📝 Notes
 
-- After your app is deployed, visit the `/admin` endpoint to login using the initial admin user you entered during config.
-- Railway's filesystem is ephemeral which is why any changes to the filesystem are not persisted between deploys. This is why, this example uses S3 for storage.
+- This is a minimal one-click-deploy solution to Directus, see [Directus docs](https://docs.directus.io/getting-started/introduction.html) to config it to your needs.
 
-## Credit
-
-Originally forked from [https://github.com/azrikahar/directus-railway-starter](https://github.com/azrikahar/directus-railway-starter) with S3 and Slugs support built in off the bat.
+- Re deploys won't erase your db data since according to Directus docs `Directus will use an existing .env file (or existing environment variables) to either install the database (if it's empty) or migrate it to the latest version (if it already exists and has missing migrations).` but be careful!
