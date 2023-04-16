@@ -1,0 +1,76 @@
+{
+	"name": "directus-extension-ai-operation-bundle",
+	"version": "1.0.6",
+	"author": "brainslug",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-operation",
+		"directus-custom-bundle"
+	],
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "operation",
+				"name": "dall-e-operation",
+				"source": {
+					"app": "src/dall-e-operation/app.js",
+					"api": "src/dall-e-operation/api.js"
+				}
+			},
+			{
+				"type": "operation",
+				"name": "stable-diffusion-operation",
+				"source": {
+					"app": "src/stable-diffusion-operation/app.js",
+					"api": "src/stable-diffusion-operation/api.js"
+				}
+			},
+			{
+				"type": "operation",
+				"name": "davinci-operation",
+				"source": {
+					"app": "src/davinci-operation/app.js",
+					"api": "src/davinci-operation/api.js"
+				}
+			},
+			{
+				"type": "operation",
+				"name": "chatgpt-operation",
+				"source": {
+					"app": "src/chatgpt-operation/app.js",
+					"api": "src/chatgpt-operation/api.js"
+				}
+			},
+			{
+				"type": "hook",
+				"name": "configuration",
+				"source": "src/configuration/index.js"
+			}
+		],
+		"host": "^9.23.4"
+	},
+	"scripts": {
+		"add": "directus-extension add",
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "9.23.4",
+		"vue": "^3.2.47"
+	},
+	"dependencies": {
+		"node-fetch": "^3.3.1",
+		"openai": "^3.2.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/br41nslug/directus-extension-ai-pack.git"
+	},
+	"license": "MIT"
+}
